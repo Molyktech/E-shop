@@ -1,22 +1,26 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { admin_login } from "../../store/Reducers/authReducer";
 
 export default function AdminLogin() {
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-  });
+    const dispatch = useDispatch();
 
-  const inputHandle = (e) => {
-    setState({
-      ...state,
-      [e.target.name]: e.target.value,
+    const [state, setState] = useState({
+      email: "",
+      password: "",
     });
-  };
 
-  const submit = (e) => {
-    e.preventDefault();
-    console.log(state);
-  };
+    const inputHandle = (e) => {
+      setState({
+        ...state,
+        [e.target.name]: e.target.value,
+      });
+    };
+
+    const submit = (e) => {
+      e.preventDefault();
+      dispatch(admin_login(state));
+    };
 
   return (
     <div className="min-w-screen min-h-screen flex justify-center items-center">
