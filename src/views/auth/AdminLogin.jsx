@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { admin_login } from "../../store/Reducers/authReducer";
-
+import { PropagateLoader } from "react-spinners";
 export default function AdminLogin() {
     const dispatch = useDispatch();
-
+    const { loader } = useSelector((state) => state.auth);
     const [state, setState] = useState({
       email: "",
       password: "",
@@ -20,6 +20,14 @@ export default function AdminLogin() {
     const submit = (e) => {
       e.preventDefault();
       dispatch(admin_login(state));
+    };
+
+    const overrideStyle = {
+      display: "flex",
+      margin: "0 auto",
+      height: "24px",
+      justifyContent: "center",
+      alignItem: "center",
     };
 
   return (
@@ -65,8 +73,15 @@ export default function AdminLogin() {
               />
             </div>
 
-            <button className="bg-slate-800 w-full hover:shadow-blue-300/ hover:shadow-lg text-white rounded-md px-7 py-2 mb-3">
-              Login
+            <button
+              disabled={loader ? true : false}
+              className="bg-slate-800 w-full hover:shadow-blue-300/ hover:shadow-lg text-white rounded-md px-7 py-2 mb-3"
+            >
+              {loader ? (
+                <PropagateLoader color="#fff" cssOverride={overrideStyle} />
+              ) : (
+                "Login"
+              )}
             </button>
           </form>
         </div>
