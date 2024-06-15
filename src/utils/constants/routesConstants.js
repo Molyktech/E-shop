@@ -1,0 +1,15 @@
+export const ROUTE_CONSTANTS = {
+  HOME: "/",
+  LOGIN: "/login",
+  REGISTER: "/register",
+  ADMIN_LOGIN: "/admin/login",
+  ADMIN_DASHBOARD: "admin/dashboard",
+  NOT_FOUND: "/404",
+  ORDERS: "/admin/dashboard/orders",
+  CATEGORY: "/admin/dashboard/category",
+  SELLERS: "/admin/dashboard/sellers",
+  PAYMENT_REQUEST: "/admin/dashboard/payment-request",
+  DEACTIVATE_SELLERS: "/admin/dashboard/deactivate-sellers",
+  SELLERS_REQUEST: "/admin/dashboard/sellers-request",
+  CHAT_SELLER: "/admin/dashboard/chat-seller",
+};

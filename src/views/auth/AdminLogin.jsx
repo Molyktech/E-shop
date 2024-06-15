@@ -1,34 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { admin_login } from "../../store/Reducers/authReducer";
+import { useNavigate } from "react-router-dom";
+import { admin_login, clearError } from "../../store/Reducers/authReducer";
 import { PropagateLoader } from "react-spinners";
+import toast from "react-hot-toast";
+import { ROUTE_CONSTANTS } from "../../utils/constants/routesConstants";
 export default function AdminLogin() {
-    const dispatch = useDispatch();
-    const { loader } = useSelector((state) => state.auth);
-    const [state, setState] = useState({
-      email: "",
-      password: "",
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { loader, errorMessage, successMessage } = useSelector(
+    (state) => state.auth
+  );
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
+
+  const inputHandle = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
     });
+  };
 
-    const inputHandle = (e) => {
-      setState({
-        ...state,
-        [e.target.name]: e.target.value,
-      });
-    };
+  const submit = (e) => {
+    e.preventDefault();
+    dispatch(admin_login(state));
+  };
 
-    const submit = (e) => {
-      e.preventDefault();
-      dispatch(admin_login(state));
-    };
+  const overrideStyle = {
+    display: "flex",
+    margin: "0 auto",
+    height: "24px",
+    justifyContent: "center",
+    alignItem: "center",
+  };
 
-    const overrideStyle = {
-      display: "flex",
-      margin: "0 auto",
-      height: "24px",
-      justifyContent: "center",
-      alignItem: "center",
-    };
+  useEffect(() => {
+    if (errorMessage) {
+      toast.error(errorMessage);
+      dispatch(clearError());
+    }
+    if (successMessage) {
+      toast.success(successMessage);
+      dispatch(clearError());
+      navigate(ROUTE_CONSTANTS.HOME);
+    }
+  }, [errorMessage, successMessage]);
 
   return (
     <div className="min-w-screen min-h-screen flex justify-center items-center">
