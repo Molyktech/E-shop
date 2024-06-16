@@ -44,7 +44,7 @@ export const allNav = [
   },
   {
     id: 6,
-    title: "Deactive Sellers",
+    title: "Deactivate Seller",
     icon: <FaUserTimes />,
     role: "admin",
     path: ROUTE_CONSTANTS.DEACTIVATE_SELLERS,

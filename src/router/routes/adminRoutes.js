@@ -9,6 +9,8 @@ const PaymentRequest = lazy(() => import("../../views/admin/PaymentRequest"));
 const DeactivateSeller = lazy(() =>
   import("../../views/admin/DeactivateSeller")
 );
+const SellerRequest = lazy(() => import("../../views/admin/SellerRequest"));
+const SellerDetails = lazy(() => import("../../views/admin/SellerDetails"));
 
 export const adminRoutes = [
   {
@@ -39,6 +41,16 @@ export const adminRoutes = [
   {
     path: ROUTE_CONSTANTS.DEACTIVATE_SELLERS,
     element: <DeactivateSeller />,
+    role: "admin",
+  },
+  {
+    path: ROUTE_CONSTANTS.SELLERS_REQUEST,
+    element: <SellerRequest />,
+    role: "admin",
+  },
+  {
+    path: `${ROUTE_CONSTANTS.SELLERS}/details/:sellerId`,
+    element: <SellerDetails />,
     role: "admin",
   },
 ];

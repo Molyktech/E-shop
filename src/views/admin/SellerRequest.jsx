@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Pagination from "../Pagination";
 import { FaEye } from "react-icons/fa";
+import { ROUTE_CONSTANTS } from "../../utils/constants/routesConstants";
 
-const DeactivateSeller = () => {
+export default function SellerRequest() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [show, setShow] = useState(false);
   return (
     <div className="px-2 lg:px-7 pt-5">
-      <h1 className="text-[20px] font-bold mb-3">Deactivate Seller </h1>
+      <h1 className="text-[20px] font-bold mb-3">Seller Request </h1>
 
       <div className="w-full p-4 bg-white rounded-md">
         <div className="flex justify-between items-center">
@@ -36,9 +37,7 @@ const DeactivateSeller = () => {
                 <th scope="col" className="py-3 px-4">
                   No
                 </th>
-                <th scope="col" className="py-3 px-4">
-                  Image
-                </th>
+
                 <th scope="col" className="py-3 px-4">
                   Name
                 </th>
@@ -59,55 +58,31 @@ const DeactivateSeller = () => {
 
             <tbody>
               {[1, 2, 3, 4, 5].map((d, i) => (
-                <tr key={i}>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
+                <tr className="border-b border-slate-700" key={i}>
+                  <td className="py-2 px-4 font-medium whitespace-nowrap">
                     {d}
                   </td>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
-                    <img
-                      className="w-[45px] h-[45px]"
-                      src={`http://localhost:3000/images/category/${d}.jpg`}
-                      alt=""
-                    />
+
+                  <td className="py-2 px-4 font-medium whitespace-nowrap">
+                    Mo Tuswit{" "}
                   </td>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
-                    Kazi Ariyan{" "}
+                  <td className="py-2 px-4 font-medium whitespace-nowrap">
+                    motuswit@gmail.com
                   </td>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
-                    ariyan@gmail.com
-                  </td>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
+                  <td className="py-2 px-4 font-medium whitespace-nowrap">
                     <span>Pending</span>{" "}
                   </td>
 
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
+                  <td className="py-2 px-4 font-medium whitespace-nowrap">
                     <span>Inactive</span>{" "}
                   </td>
 
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
+                  <td className="py-2 px-4 font-medium whitespace-nowrap">
                     <div className="flex justify-start items-center gap-4">
-                      <Link className="p-[6px] bg-cyan-300 rounded hover:shadow-lg hover:shadow-cyan-500/50 ">
+                      <Link
+                        to={`${ROUTE_CONSTANTS.SELLERS}/details/2`}
+                        className="p-[6px] bg-cyan-300 rounded hover:shadow-lg hover:shadow-cyan-500/50 "
+                      >
                         {" "}
                         <FaEye />{" "}
                       </Link>
@@ -131,5 +106,4 @@ const DeactivateSeller = () => {
       </div>
     </div>
   );
-};
-export default DeactivateSeller;
+}
