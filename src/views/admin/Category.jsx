@@ -125,7 +125,7 @@ const Category = () => {
           } z-[9999] top-0 transition-all duration-500 `}
         >
           <div className="w-full pl-5">
-            <div className="bg-white h-screen lg:h-auto px-3 py-2 lg:rounded-md text-[#0c1b38]]">
+            <div className="bg-white h-screen lg:h-auto px-3 py-2 lg:rounded-md text-[#0c1b38]">
               <div className="flex justify-between items-center mb-4">
                 <h1 className="text-[#0c1b38]] font-semibold text-xl mb-4 w-full text-center ">
                   Add Category
