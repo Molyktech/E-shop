@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMdImages, IoMdCloseCircle } from "react-icons/io";
+import { ROUTE_CONSTANTS } from "../../utils/constants/routesConstants";
 
 const AddProduct = () => {
   const categories = [
@@ -107,7 +108,10 @@ const AddProduct = () => {
       <div className="w-full p-4 bg-white shadow-md rounded-md">
         <div className="flex justify-between items-center pb-4">
           <h1 className="app-dark-text  text-xl font-semibold">Add Product</h1>
-          <Link className="bg-violet-600 hover:shadow-violet-500/40 hover:shadow-lg text-white rounded-md px-7 py-2 my-2">
+          <Link
+            to={ROUTE_CONSTANTS.SELLER_ALL_PRODUCT}
+            className="bg-violet-600 hover:shadow-violet-500/40 hover:shadow-lg text-white rounded-md px-7 py-2 my-2"
+          >
             All Product
           </Link>
         </div>

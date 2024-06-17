@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaEdit, FaTrash, FaEye } from "react-icons/fa";
 import Search from "../components/Search";
+import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
+import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
 
-const Products = () => {
+const DiscountProducts = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
   const [itemsPerPage, setItemsPerPage] = useState(5);
+
   return (
     <div className="px-2 lg:px-7 pt-5">
-      <h1 className="text-[20px] font-bold mb-3">All Products </h1>
+      <h1 className="text-[20px] font-bold mb-3">Discount Products </h1>
       <div className="w-full p-4 bg-white rounded-md">
         <Search
           setItemsPerPage={setItemsPerPage}
@@ -18,8 +19,8 @@ const Products = () => {
           setSearchValue={setSearchValue}
         />
         <div className="relative overflow-x-auto mt-5">
-          <table className="w-full text-sm text-left text-[#0c1b38]">
-            <thead className="text-sm text-[#0c1b38 uppercase border-b border-slate-700">
+          <table className="w-full text-sm text-left app-dark-text">
+            <thead className="text-sm app-dark-text uppercase border-b border-slate-700">
               <tr>
                 <th scope="col" className="py-3 px-4">
                   No
@@ -71,10 +72,10 @@ const Products = () => {
                     Tshirt
                   </td>
                   <td className="py-1 px-4 font-medium whitespace-nowrap">
-                    Adidas
+                    Veirdo{" "}
                   </td>
                   <td className="py-1 px-4 font-medium whitespace-nowrap">
-                    $200
+                    $232
                   </td>
                   <td className="py-1 px-4 font-medium whitespace-nowrap">
                     10%
@@ -104,6 +105,7 @@ const Products = () => {
             </tbody>
           </table>
         </div>
+
         <div className="w-full flex justify-end mt-4 bottom-4 right-4">
           <Pagination
             pageNumber={currentPage}
@@ -117,4 +119,4 @@ const Products = () => {
     </div>
   );
 };
-export default Products;
+export default DiscountProducts;

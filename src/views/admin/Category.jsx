@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Pagination from "../Pagination";
+import Pagination from "../components/Pagination";
 import { FaE } from "react-icons/fa6";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { FaImage } from "react-icons/fa";
@@ -27,7 +27,11 @@ const Category = () => {
       <div className="flex flex-wrap w-full ">
         <div className="w-full lg:w-7/12">
           <div className="w-full p-4 bg-white rounded-md">
-            <Search setItemsPerPage={setItemsPerPage} />
+            <Search
+              setItemsPerPage={setItemsPerPage}
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+            />
 
             <div className="relative overflow-x-auto">
               <table className="w-full text-sm text-left text-[#0c1b38]">

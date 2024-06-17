@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Pagination from "../Pagination";
+import Pagination from "../components/Pagination";
 import { FaEye } from "react-icons/fa";
 
 const DeactivateSeller = () => {

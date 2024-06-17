@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LuArrowDownSquare } from "react-icons/lu";
 import { Link } from "react-router-dom";
-import Pagination from "../Pagination";
+import Pagination from "../components/Pagination";
 import { ROUTE_CONSTANTS } from "../../utils/constants/routesConstants";
 import Search from "../components/Search";
 
@@ -14,7 +14,11 @@ export default function Orders() {
   return (
     <div className="px-2 lg:px-7 pt-5">
       <div className="w-full p-4 bg-white rounded-md">
-        <Search setItemsPerPage={setItemsPerPage} />
+        <Search
+          setItemsPerPage={setItemsPerPage}
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
         <div className="relative mt-5 overflow-x-auto">
           <div className="w-full text-sm text-left">
             <div className="text-sm text-[#0c1b38] uppercase border-b border-slate-700">
