@@ -12,4 +12,13 @@ export const ROUTE_CONSTANTS = {
   DEACTIVATE_SELLERS: "/admin/dashboard/deactivate-sellers",
   SELLERS_REQUEST: "/admin/dashboard/sellers-request",
   CHAT_SELLER: "/admin/dashboard/chat-seller",
+  SELLER_DASHBOARD: "/seller/dashboard",
+  SELLER_ADD_PRODUCT: "/seller/dashboard/add-product",
+  SELLER_ALL_PRODUCT: "/seller/dashboard/all-product",
+  SELLER_DISCOUNT_PRODUCT: "/seller/dashboard/discount-product",
+  SELLER_ORDERS: "/seller/dashboard/orders",
+  SELLER_ORDER_DETAILS: "/seller/dashboard/orders/details/:orderId",
+  SELLER_PAYMENT: "/seller/dashboard/payments",
+  SELLER_CHAT_CUSTOMER: "/seller/dashboard/chat-customer",
+  SELLER_CHAT_SUPPORT: "/seller/dashboard/chat-support",
 };

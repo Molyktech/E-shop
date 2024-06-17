@@ -5,6 +5,7 @@ import { FaE } from "react-icons/fa6";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { FaImage } from "react-icons/fa";
 import { IoMdCloseCircle } from "react-icons/io";
+import Search from "../components/Search";
 
 const Category = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -26,21 +27,7 @@ const Category = () => {
       <div className="flex flex-wrap w-full ">
         <div className="w-full lg:w-7/12">
           <div className="w-full p-4 bg-white rounded-md">
-            <div className="flex justify-between items-center">
-              <select
-                onChange={(e) => setItemsPerPage(parseInt(e.target.value))}
-                className="px-4 py-2 focus:border-indigo-900 outline-none bg-[#8A30E2] border border-[#8A30E2] rounded-md text-[#d0d2d6]"
-              >
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-              </select>
-              <input
-                className="px-4 py-2 focus:border-indigo-500 outline-none bg-white border border-[#8A30E2] rounded-md text-[#d0d2d6]"
-                type="text"
-                placeholder="search"
-              />
-            </div>
+            <Search setItemsPerPage={setItemsPerPage} />
 
             <div className="relative overflow-x-auto">
               <table className="w-full text-sm text-left text-[#0c1b38]">
