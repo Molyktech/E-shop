@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { ROUTE_CONSTANTS } from "../../utils/constants/routesConstants";
 
+
 const AdminDashboard = lazy(() => import("../../views/admin/AdminDashboard"));
 const Orders = lazy(() => import("../../views/admin/Orders"));
 const Category = lazy(() => import("../../views/admin/Category"));
@@ -11,6 +12,8 @@ const DeactivateSeller = lazy(() =>
 );
 const SellerRequest = lazy(() => import("../../views/admin/SellerRequest"));
 const SellerDetails = lazy(() => import("../../views/admin/SellerDetails"));
+const LiveChat = lazy(() => import("../../views/admin/LiveChat"));
+const OrderDetails = lazy(() => import("../../views/admin/OrderDetails"));
 
 export const adminRoutes = [
   {
@@ -51,6 +54,16 @@ export const adminRoutes = [
   {
     path: `${ROUTE_CONSTANTS.SELLERS}/details/:sellerId`,
     element: <SellerDetails />,
+    role: "admin",
+  },
+  {
+    path: ROUTE_CONSTANTS.CHAT_SELLER,
+    element: <LiveChat />,
+    role: "admin",
+  },
+  {
+    path: `${ROUTE_CONSTANTS.ORDERS}/details/:orderId`,
+    element: <OrderDetails />,
     role: "admin",
   },
 ];

@@ -15,7 +15,7 @@ const Category = () => {
   return (
     <div className="px-2 lg:px-7 pt-5">
       <div className="flex lg:hidden justify-between items-center mb-5 p-4 bg-white rounded-md">
-        <h1 className="text-[#0c1b38]] font-semibold text-lg">Category</h1>
+        <h1 className="text-[#0c1b38] font-semibold text-lg">Category</h1>
         <button
           onClick={() => setShow(true)}
           className="bg-violet-600 shadow-lg hover:shadow-violet-500/40 px-4 py-2 cursor-pointer text-white rounded-md text-sm"
@@ -127,7 +127,7 @@ const Category = () => {
           <div className="w-full pl-5">
             <div className="bg-white h-screen lg:h-auto px-3 py-2 lg:rounded-md text-[#0c1b38]">
               <div className="flex justify-between items-center mb-4">
-                <h1 className="text-[#0c1b38]] font-semibold text-xl mb-4 w-full text-center ">
+                <h1 className="text-[#0c1b38] font-semibold text-xl mb-4 w-full text-center ">
                   Add Category
                 </h1>
                 <div onClick={() => setShow(false)} className="block lg:hidden">
