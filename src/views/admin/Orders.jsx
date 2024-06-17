@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { LuArrowDownSquare } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import Pagination from "../Pagination";
+import { ROUTE_CONSTANTS } from "../../utils/constants/routesConstants";
 
 export default function Orders() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,7 +52,7 @@ export default function Orders() {
                 <div className="py-3 w-[18%] font-medium">Pending</div>
                 <div className="py-3 w-[18%] font-medium">Pending</div>
                 <div className="py-3 w-[18%] font-medium">
-                  <Link>View</Link>
+                  <Link to={`${ROUTE_CONSTANTS.ORDERS}/details/1`}>View</Link>
                 </div>
                 <div
                   onClick={(e) => setShowTableDropDown(!showTableDropDown)}
@@ -97,7 +98,7 @@ export default function Orders() {
                 <div className="py-3 w-[18%] font-medium">Pending</div>
                 <div className="py-3 w-[18%] font-medium">Pending</div>
                 <div className="py-3 w-[18%] font-medium">
-                  <Link>View</Link>
+                  <Link to={`${ROUTE_CONSTANTS.ORDERS}/details/2`}>View</Link>
                 </div>
                 <div
                   onClick={(e) => setShowTableDropDown(!showTableDropDown)}
