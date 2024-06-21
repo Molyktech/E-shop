@@ -119,4 +119,11 @@ export const allNav = [
     role: "seller",
     path: ROUTE_CONSTANTS.SELLER_CHAT_SUPPORT,
   },
+  {
+    id: 16,
+    title: "Profile",
+    icon: <AiOutlineDashboard />,
+    role: "seller",
+    path: ROUTE_CONSTANTS.SELLER_PROFILE,
+  },
 ];

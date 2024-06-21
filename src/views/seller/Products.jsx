@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaEdit, FaTrash, FaEye } from "react-icons/fa";
 import Search from "../components/Search";
 import Pagination from "../components/Pagination";
+import { ROUTE_CONSTANTS } from "../../utils/constants/routesConstants";
 
 const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -85,7 +86,10 @@ const Products = () => {
 
                   <td className="py-1 px-4 font-medium whitespace-nowrap">
                     <div className="flex justify-start items-center gap-4">
-                      <Link className="p-[6px] bg-cyan-300 rounded hover:shadow-lg hover:shadow-cyan-500/50">
+                      <Link
+                        className="p-[6px] bg-cyan-300 rounded hover:shadow-lg hover:shadow-cyan-500/50"
+                        to={`${ROUTE_CONSTANTS.SELLER_EDIT_PRODUCT}/32`}
+                      >
                         {" "}
                         <FaEdit />{" "}
                       </Link>

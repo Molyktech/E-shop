@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Search from "../components/Search";
+import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
-import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
+import Search from "../components/Search";
+import { ROUTE_CONSTANTS } from "../../utils/constants/routesConstants";
 
 const Orders = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -58,7 +59,10 @@ const Orders = () => {
                   </td>
                   <td className="py-1 px-4 font-medium whitespace-nowrap">
                     <div className="flex justify-start items-center gap-4">
-                      <Link className="p-[6px] bg-green-300 rounded hover:shadow-lg hover:shadow-green-500/50">
+                      <Link
+                        className="p-[6px] bg-green-300 rounded hover:shadow-lg hover:shadow-green-500/50"
+                        to={`${ROUTE_CONSTANTS.SELLER_ORDER_DETAILS}/1`}
+                      >
                         {" "}
                         <FaEye />{" "}
                       </Link>

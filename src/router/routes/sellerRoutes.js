@@ -14,6 +14,9 @@ const Orders = lazy(() => import("../../views/seller/Orders"));
 const Payments = lazy(() => import("../../views/seller/Payments"));
 const ChatCustomer = lazy(() => import("../../views/seller/ChatCustomer"));
 const ChatSupport = lazy(() => import("../../views/seller/ChatSupport"));
+const Profile = lazy(() => import("../../views/seller/Profile"));
+const EditProduct = lazy(() => import("../../views/seller/EditProduct"));
+const OrderDetails = lazy(() => import("../../views/seller/OrderDetails"));
 
 export const sellerRoutes = [
   {
@@ -74,5 +77,23 @@ export const sellerRoutes = [
     element: <ChatSupport />,
     role: "seller",
     guard: ["active", "inactive", "pending"],
+  },
+  {
+    path: ROUTE_CONSTANTS.SELLER_PROFILE,
+    element: <Profile />,
+    role: "seller",
+    status: "active",
+  },
+  {
+    path: `${ROUTE_CONSTANTS.SELLER_EDIT_PRODUCT}/:productId`,
+    element: <EditProduct />,
+    role: "seller",
+    status: "active",
+  },
+  {
+    path: `${ROUTE_CONSTANTS.SELLER_ORDER_DETAILS}/:orderId`,
+    element: <OrderDetails />,
+    role: "seller",
+    guard: ["active", "inactive"],
   },
 ];
