@@ -10,6 +10,11 @@ const Products = lazy(() => import("../../views/seller/Products"));
 const DiscountProducts = lazy(() =>
   import("../../views/seller/DiscountProducts")
 );
+const Orders = lazy(() => import("../../views/seller/Orders"));
+const Payments = lazy(() => import("../../views/seller/Payments"));
+const ChatCustomer = lazy(() => import("../../views/seller/ChatCustomer"));
+const ChatSupport = lazy(() => import("../../views/seller/ChatSupport"));
+
 export const sellerRoutes = [
   {
     path: ROUTE_CONSTANTS.HOME,
@@ -19,21 +24,55 @@ export const sellerRoutes = [
   {
     path: ROUTE_CONSTANTS.SELLER_DASHBOARD,
     element: <SellerDashboard />,
-    guard: ["seller"],
+    role: "seller",
+    status: "active",
   },
   {
     path: ROUTE_CONSTANTS.SELLER_ADD_PRODUCT,
     element: <AddProduct />,
-    guard: ["seller"],
+    role: "seller",
+    status: "active",
   },
   {
     path: ROUTE_CONSTANTS.SELLER_ALL_PRODUCT,
     element: <Products />,
-    guard: ["seller"],
+    role: "seller",
+    status: "active",
   },
   {
     path: ROUTE_CONSTANTS.SELLER_DISCOUNT_PRODUCT,
     element: <DiscountProducts />,
-    guard: ["seller"],
+    role: "seller",
+    status: "active",
+  },
+  {
+    path: ROUTE_CONSTANTS.SELLER_ORDERS,
+    element: <Orders />,
+    role: "seller",
+    guard: ["active", "inactive"],
+  },
+  {
+    path: ROUTE_CONSTANTS.SELLER_PAYMENT,
+    element: <Payments />,
+    role: "seller",
+    status: "active",
+  },
+  {
+    path: ROUTE_CONSTANTS.SELLER_CHAT_CUSTOMER,
+    element: <ChatCustomer />,
+    role: "seller",
+    status: "active",
+  },
+  {
+    path: `${ROUTE_CONSTANTS.SELLER_CHAT_CUSTOMER}/:customerId`,
+    element: <ChatCustomer />,
+    role: "seller",
+    status: "active",
+  },
+  {
+    path: ROUTE_CONSTANTS.SELLER_CHAT_SUPPORT,
+    element: <ChatSupport />,
+    role: "seller",
+    guard: ["active", "inactive", "pending"],
   },
 ];
