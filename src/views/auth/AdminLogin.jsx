@@ -5,6 +5,8 @@ import { admin_login, clearError } from "../../store/Reducers/authReducer";
 import { PropagateLoader } from "react-spinners";
 import toast from "react-hot-toast";
 import { ROUTE_CONSTANTS } from "../../utils/constants/routesConstants";
+import { overrideStyle } from "../../utils/constants/helpers";
+
 export default function AdminLogin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -26,14 +28,6 @@ export default function AdminLogin() {
   const submit = (e) => {
     e.preventDefault();
     dispatch(admin_login(state));
-  };
-
-  const overrideStyle = {
-    display: "flex",
-    margin: "0 auto",
-    height: "24px",
-    justifyContent: "center",
-    alignItem: "center",
   };
 
   useEffect(() => {
