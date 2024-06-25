@@ -23,4 +23,7 @@ export const ROUTE_CONSTANTS = {
   SELLER_CHAT_CUSTOMER: "/seller/dashboard/chat-customer",
   SELLER_CHAT_SUPPORT: "/seller/dashboard/chat-support",
   SELLER_PROFILE: "/seller/dashboard/profile",
+  SELLER_PENDING: "/seller/account-pending",
+  SELLER_INACTIVE: "/seller/account-inactive",
+  UNAUTHORIZED: "/unauthorized",
 };

@@ -4,6 +4,13 @@ import { FaUserTimes, FaUsers } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 import { FaCodePullRequest } from "react-icons/fa6";
 import { IoIosChatbubbles } from "react-icons/io";
+import { IoMdAdd } from "react-icons/io";
+import { MdViewList } from "react-icons/md";
+import { TbBasketDiscount } from "react-icons/tb";
+import { BsCartCheck } from "react-icons/bs";
+import { IoChatbubbles } from "react-icons/io5";
+import { BsFillChatQuoteFill } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
 import { ROUTE_CONSTANTS } from "../utils/constants/routesConstants";
 
 export const allNav = [
@@ -73,56 +80,56 @@ export const allNav = [
   {
     id: 10,
     title: "Add Product",
-    icon: <AiOutlineDashboard />,
+    icon: <IoMdAdd />,
     role: "seller",
     path: ROUTE_CONSTANTS.SELLER_ADD_PRODUCT,
   },
   {
     id: 11,
     title: "All Product",
-    icon: <AiOutlineDashboard />,
+    icon: <MdViewList />,
     role: "seller",
     path: ROUTE_CONSTANTS.SELLER_ALL_PRODUCT,
   },
   {
     id: 12,
     title: "Discount Product",
-    icon: <AiOutlineDashboard />,
+    icon: <TbBasketDiscount />,
     role: "seller",
     path: ROUTE_CONSTANTS.SELLER_DISCOUNT_PRODUCT,
   },
   {
     id: 13,
     title: "Orders",
-    icon: <AiOutlineDashboard />,
+    icon: <BsCartCheck />,
     role: "seller",
     path: ROUTE_CONSTANTS.SELLER_ORDERS,
   },
   {
     id: 14,
     title: "Payments",
-    icon: <AiOutlineDashboard />,
+    icon: <MdPayment />,
     role: "seller",
     path: ROUTE_CONSTANTS.SELLER_PAYMENT,
   },
   {
     id: 15,
     title: "Chat-Customer",
-    icon: <AiOutlineDashboard />,
+    icon: <IoChatbubbles />,
     role: "seller",
     path: ROUTE_CONSTANTS.SELLER_CHAT_CUSTOMER,
   },
   {
     id: 16,
     title: "Chat-Support",
-    icon: <AiOutlineDashboard />,
+    icon: <BsFillChatQuoteFill />,
     role: "seller",
     path: ROUTE_CONSTANTS.SELLER_CHAT_SUPPORT,
   },
   {
     id: 16,
     title: "Profile",
-    icon: <AiOutlineDashboard />,
+    icon: <CgProfile />,
     role: "seller",
     path: ROUTE_CONSTANTS.SELLER_PROFILE,
   },

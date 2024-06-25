@@ -42,7 +42,7 @@ export default function Register() {
     if (successMessage) {
       toast.success(successMessage);
       dispatch(clearError());
-      navigate(ROUTE_CONSTANTS.LOGIN);
+      navigate(ROUTE_CONSTANTS.HOME);
     }
   }, [successMessage, errorMessage]);
 

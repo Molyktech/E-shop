@@ -1,7 +1,7 @@
 import { lazy } from "react";
 import { ROUTE_CONSTANTS } from "../../utils/constants/routesConstants";
 
-const Home = lazy(() => import("../../views/pages/Home"));
+
 const SellerDashboard = lazy(() =>
   import("../../views/seller/SellerDashboard")
 );
@@ -19,11 +19,6 @@ const EditProduct = lazy(() => import("../../views/seller/EditProduct"));
 const OrderDetails = lazy(() => import("../../views/seller/OrderDetails"));
 
 export const sellerRoutes = [
-  {
-    path: ROUTE_CONSTANTS.HOME,
-    element: <Home />,
-    guard: ["admin", "seller"],
-  },
   {
     path: ROUTE_CONSTANTS.SELLER_DASHBOARD,
     element: <SellerDashboard />,

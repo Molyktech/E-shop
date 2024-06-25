@@ -3,15 +3,18 @@ import { Link, useLocation } from "react-router-dom";
 import { getNav } from "../navigation/index";
 import { ROUTE_CONSTANTS } from "../utils/constants/routesConstants";
 import { BiLogOutCircle } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Sidebar({ showSidebar, setShowSidebar }) {
   const { pathname } = useLocation();
+  const dispatch = useDispatch();
   const [allNav, setAllNav] = useState([]);
+  const { role } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    const navs = getNav("seller");
+    const navs = getNav(role);
     setAllNav(navs);
-  }, []);
+  }, [role]);
 
   return (
     <div>
